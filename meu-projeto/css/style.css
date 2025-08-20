@@ -1,0 +1,245 @@
+/* Importar fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema claro (padrão) */
+body.light {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Tema escuro */
+body.dark {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(90deg, #007bff, #00c4ff);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+nav {
+    margin: 1rem 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+#theme-toggle {
+    background: #fff;
+    color: #007bff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background: #ffd700;
+    color: #333;
+}
+
+/* Seções */
+section {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in;
+}
+
+body.dark section {
+    background: #2a2a3e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+body.dark section h2 {
+    color: #00c4ff;
+}
+
+section p, section ul {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+body.dark section p, body.dark section ul {
+    color: #d0d0d0;
+}
+
+section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+section ul li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+section ul li::before {
+    content: '•';
+    color: #007bff;
+    position: absolute;
+    left: 0;
+}
+
+/* Projetos */
+.projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark .card {
+    background: #33334d;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #007bff;
+}
+
+body.dark .card h3 {
+    color: #00c4ff;
+}
+
+.card p {
+    margin-bottom: 1rem;
+}
+
+.card a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+body.dark .card a {
+    color: #00c4ff;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Contato */
+#contato a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+body.dark #contato a {
+    color: #00c4ff;
+}
+
+#contato a:hover {
+    text-decoration: underline;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
+    margin-top: 2rem;
+}
+
+body.dark footer {
+    background: #111125;
+}
+
+/* Animação */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 0.5rem;
+    }
+
+    section {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+}
